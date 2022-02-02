@@ -16,10 +16,10 @@ namespace QuikTrippin.Models
             role = Role;
         }
 
-        private string Role;
-        private string FirstName;
-        private string LastName;
-        private double RetailSales;
+        public string Role;
+        public string FirstName;
+        public string LastName;
+        public double RetailSales;
 
         public void EmployeeDetails()
         {
