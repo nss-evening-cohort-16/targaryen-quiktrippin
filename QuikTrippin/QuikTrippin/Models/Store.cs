@@ -19,6 +19,11 @@ namespace QuikTrippin.Models
         public int StoreNumber { get; set; }
         //gabriel making these?
         //public List<Associate> Associates { get; set; }
+        public List<Employee> employees { get; set; } = new List<Employee>();
+        public void AddEmployee(Employee employee)
+        {
+            employees.Add(employee);
+        }
         public string StoreManager { get; set; }
         public string AssistantManager { get; set; }
     }
