@@ -20,15 +20,23 @@ namespace QuikTrippin.Models
         public string DistrictManager { get; set; }
         public List<Store> Stores { get; set; }
 
-        public void AddStore(int storeNum, string manager, string assistantManager, double storeManagerRetailSales, double assistantManagerRetailSales)
+        public void AddStore(int storeNum)
         {
             if (Stores == null)
             {
                 Stores = new List<Store>();
             }
 
-            var store = new Store(storeNum, manager, assistantManager, storeManagerRetailSales, assistantManagerRetailSales);
+            var store = new Store(storeNum);
             Stores.Add(store);
+        }
+
+        public void ShowStores()
+        {
+            foreach (Store store in Stores)
+            {
+                Console.WriteLine($"{store.StoreNumber}");
+            }
         }
 
     }
