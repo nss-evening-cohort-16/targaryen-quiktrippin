@@ -8,14 +8,14 @@ namespace QuikTrippin.Models
 {
     internal class StoreRepository
     {
-        static List<Store> _stores = new List<Store>();
+        static List<Stores> _stores = new List<Stores>();
 
-        public void SaveNewStore(Store store)
+        public void SaveNewStore(Stores store)
         {
             _stores.Add(store);
         }
 
-        public List<Store> GetStores()
+        public List<Stores> GetStores()
         {
             return _stores;
         }

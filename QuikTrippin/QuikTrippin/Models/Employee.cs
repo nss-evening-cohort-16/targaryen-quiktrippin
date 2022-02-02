@@ -10,17 +10,17 @@ namespace QuikTrippin.Models
     {
         public Employee(string firstname, string lastname, double retailsales)
         {
-            firstname = FirstName;
-            lastname = LastName;
-            retailsales = RetailSales;
+            FirstName = firstname;
+            LastName = lastname;
+            RetailSales = retailsales;
         }
 
         public string RoleMenu
         {
             get
             {
-                return @$"
-Please Choose Employee's Role
+                return 
+@$"Please Choose Employee's Role
 1) Manager
 2) Assistant Manager
 3) Associate
@@ -64,7 +64,7 @@ Please Choose Employee's Role
             GetPlayerInput();
         }
 
-        private void GetPlayerInput()
+        public void GetPlayerInput()
         {
             var input = Console.ReadKey().KeyChar.ToString();
 
@@ -74,9 +74,8 @@ Please Choose Employee's Role
             }
         }
 
-        private void GetRoleMenu()
+        public void GetRoleMenu()
         {
-            Console.Clear();
             Console.WriteLine(RoleMenu);
         }
     }

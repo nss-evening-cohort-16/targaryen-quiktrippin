@@ -8,6 +8,7 @@ bool success = false;
 bool storeNumSuccess = false;
 var stringStoreNum = "0";
 int storeNum = 0;
+double parsedRetail = 0;
 
 while (intMenuSelect != 5)
 {
@@ -30,7 +31,7 @@ while (intMenuSelect != 5)
         stringStoreNum = Console.ReadLine();
         storeNumSuccess = (int.TryParse(stringStoreNum, out storeNum));
 
-        Store store = new Store(storeNum);
+        Stores store = new Stores(storeNum);
 
         district.AddStore(storeNum);
 
@@ -40,6 +41,38 @@ while (intMenuSelect != 5)
         Console.Clear();
 
         success = false;
+    } else if (success && intMenuSelect == 3)
+    {
+        var StoreQ = "Enter store's number";
+        var EmployeeName1 = "Enter Employee's First Name";
+        var EmployeeName2 = "Enter Employee's Last Name";
+
+        Console.Clear();
+
+        Console.WriteLine(StoreQ);
+        var StoreNumber = Console.ReadLine();
+        storeNumSuccess = int.TryParse(StoreNumber, out storeNum);
+
+        var MatchingStoreNum = District.Stores.Find(store => store.StoreNumber == storeNum);
+
+        Console.WriteLine(EmployeeName1);
+        var firstname = Console.ReadLine();
+
+        Console.WriteLine(EmployeeName2);
+        var lastname = Console.ReadLine();
+
+        Console.WriteLine($"Enter {firstname}'s retail sales");
+        var retailsales = Console.ReadLine();
+        success = double.TryParse(retailsales, out parsedRetail);
+
+        Employee employees = new Employee(firstname, lastname, parsedRetail);
+
+        employees.ShowRoleMenu();
+
+        MatchingStoreNum.AddEmployee(employees);
+
+        Console.Clear();
+
     }
     else
     {
