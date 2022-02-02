@@ -56,6 +56,7 @@ while (intMenuSelect != 5)
 
         var MatchingStoreNum = District.Stores.Find(store => store.StoreNumber == storeNum);
 
+        MatchingStoreNum = District.Stores.Find(store => store.StoreNumber == storeNum);
         Console.Clear();
 
         Console.WriteLine(EmployeeName1);
@@ -78,6 +79,7 @@ while (intMenuSelect != 5)
 
         Console.Clear();
 
+        success = false;
     }
     else
     {
