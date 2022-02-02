@@ -19,5 +19,6 @@ namespace QuikTrippin.Models
         // Properties
 
         // Methods
+        public void
     }
 }

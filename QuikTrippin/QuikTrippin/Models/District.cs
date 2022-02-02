@@ -27,7 +27,7 @@ namespace QuikTrippin.Models
                 Stores = new List<Store>();
             }
 
-            var store = new Store(storeNum, manager, assistantManager, storeManagerRetailSales,assistantManagerRetailSales);
+            var store = new Store(storeNum, manager, assistantManager, storeManagerRetailSales, assistantManagerRetailSales);
             Stores.Add(store);
         }
 
