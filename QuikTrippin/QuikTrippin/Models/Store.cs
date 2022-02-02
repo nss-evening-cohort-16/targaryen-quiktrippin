@@ -9,11 +9,13 @@ namespace QuikTrippin.Models
     internal class Store
     {
         //store consists of a group of associates, store manager, and assistant manager
-        public Store(int storeNumber, string storeManager, string assistantManager)
+        public Store(int storeNumber, string storeManager, string assistantManager, double storeManagerRetailSales, double assistantManagerRetailSales)
         {
             StoreNumber = storeNumber;
             StoreManager = storeManager;
             AssistantManager = assistantManager;
+            StoreManagerRetailSales = storeManagerRetailSales;
+            AssistantManagerRetailSales = assistantManagerRetailSales;
         }
 
         public int StoreNumber { get; set; }
@@ -26,5 +28,7 @@ namespace QuikTrippin.Models
         }
         public string StoreManager { get; set; }
         public string AssistantManager { get; set; }
+        public double StoreManagerRetailSales { get; set; }
+        public double AssistantManagerRetailSales { get; set;}
     }
 }
