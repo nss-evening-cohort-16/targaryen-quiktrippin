@@ -54,7 +54,7 @@ namespace QuikTrippin.Models
             Console.WriteLine($@"
   {Role}
   Employee Name: {FirstName} {LastName}
-  Retail Current quarter: ${RetailSales}
+  Retail Sales: ${RetailSales}
 ");
         }
 
