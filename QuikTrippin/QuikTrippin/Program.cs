@@ -45,9 +45,10 @@ while (intMenuSelect != 5)
     {
         var StoreQ = "Enter store's number";
         var EmployeeName1 = "Enter Employee's First Name";
-        var EmployeeName2 = "Enter Employee's Last Name";
 
         Console.Clear();
+
+        District.ShowStores();
 
         Console.WriteLine(StoreQ);
         var StoreNumber = Console.ReadLine();
@@ -55,8 +56,12 @@ while (intMenuSelect != 5)
 
         var MatchingStoreNum = District.Stores.Find(store => store.StoreNumber == storeNum);
 
+        Console.Clear();
+
         Console.WriteLine(EmployeeName1);
         var firstname = Console.ReadLine();
+
+        var EmployeeName2 = $"Enter {firstname}'s Last Name";
 
         Console.WriteLine(EmployeeName2);
         var lastname = Console.ReadLine();

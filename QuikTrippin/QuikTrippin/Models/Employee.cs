@@ -68,9 +68,14 @@ namespace QuikTrippin.Models
         {
             var input = Console.ReadKey().KeyChar.ToString();
 
-            if (!String.IsNullOrWhiteSpace(input) && int.TryParse(input, out int inputAsInt))
+            var inputInt = int.TryParse(input, out int inputAsInt);
+
+            if (!String.IsNullOrWhiteSpace(input) && inputInt)
             {
                 Role = (RoleSelection)inputAsInt;
+            } else
+            {
+                ShowRoleMenu();
             }
         }
 

@@ -31,11 +31,13 @@ namespace QuikTrippin.Models
             Stores.Add(store);
         }
 
-        public void ShowStores()
+        public static void ShowStores()
         {
+            int storeList = 0;
             foreach (Stores store in Stores)
             {
-                Console.WriteLine($"{store.StoreNumber}");
+                storeList++;
+                Console.WriteLine($"Store {storeList} Number: {store.StoreNumber}"); 
             }
         }
 
