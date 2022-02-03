@@ -8,22 +8,14 @@ namespace QuikTrippin.Models
 {
     internal class DistrictRepository
     {
-        static List<District> _districts = new List<District>();
+        public static List<District> _districts = new List<District>();
 
-        public void GetDistricts()
-        {
-            foreach (District district in _districts)
-            {
-                Console.WriteLine(district.DistrictManager);
-            }
-        }
-
-        public void SaveNewDistrict(District district)
+        public static void SaveNewDistrict(District district)
         {
             _districts.Add(district);
         }
 
-        public void PrintDistrictReport()
+        public List<District> GetDistricts()
         {
             Console.WriteLine($@"
 District Sales Report

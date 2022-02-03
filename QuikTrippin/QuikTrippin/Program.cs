@@ -30,13 +30,15 @@ while (intMenuSelect != 6)
     {
         Console.Clear();
 
-        Console.WriteLine("Enter District Name:");
-        var districtName = Console.ReadLine();
+        var checkDistricts = DistrictRepository.GetDistricts();
+        checkDistricts.ForEach(dist => Console.WriteLine(dist.Name));
 
-        Console.WriteLine("Enter District Manager Name:");
-        var districtManagerName = Console.ReadLine();
+        Console.WriteLine("Enter District Name");
+        var name = Console.ReadLine();
 
-        District district = new District(districtManagerName, districtName);
+        var matchingDistrictName = DistrictRepository._districts.Find(district => district.Name == name);
+
+        Console.Clear();
 
         Console.WriteLine("Enter store number:");
         stringStoreNum = Console.ReadLine();
@@ -44,7 +46,7 @@ while (intMenuSelect != 6)
 
         Store store = new Store(storeNum);
 
-        district.AddStore(storeNum);
+        matchingDistrictName.AddStore(storeNum);
 
         Console.Clear();
 
@@ -89,6 +91,22 @@ while (intMenuSelect != 6)
 
         success = false;
     }
+    else if (success && intMenuSelect == 5)
+    {
+        Console.Clear();
+
+        Console.WriteLine("Enter District Name:");
+        var districtName = Console.ReadLine();
+
+        Console.WriteLine("Enter District Manager Name:");
+        var districtManagerName = Console.ReadLine();
+
+        District district = new District(districtManagerName, districtName);
+
+        DistrictRepository.SaveNewDistrict(district);
+
+        Console.Clear();
+    } 
     else
     {
         Console.WriteLine("Please enter a number between 1-6.\n");
