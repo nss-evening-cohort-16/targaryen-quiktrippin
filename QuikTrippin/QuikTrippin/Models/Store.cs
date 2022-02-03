@@ -34,6 +34,11 @@ namespace QuikTrippin.Models
             Employees.Add(employee);
         }
 
+        public void ShowEmployees()
+        {
+            Employees.ForEach(em => em.EmployeeDetails());
+        }
+
         public string StoreManager { get; set; }
         public string AssistantManager { get; set; }
         public double StoreManagerRetailSales { get; set; }

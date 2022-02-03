@@ -37,7 +37,8 @@ namespace QuikTrippin.Models
             foreach (Stores store in Stores)
             {
                 storeList++;
-                Console.WriteLine($"{storeList}.Store Number: {store.StoreNumber}"); 
+                Console.WriteLine($"{storeList}.Store Number: {store.StoreNumber}");
+                store.ShowEmployees();
             }
         }
 
