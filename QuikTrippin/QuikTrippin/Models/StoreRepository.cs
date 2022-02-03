@@ -8,7 +8,7 @@ namespace QuikTrippin.Models
 {
     internal class StoreRepository
     {
-        static List<Store> _stores = new List<Store>();
+        static List<Stores> _stores = new List<Stores>();
 
         public void GetStores()
         {
@@ -23,7 +23,7 @@ namespace QuikTrippin.Models
             _stores.Add(store);
         }
 
-        public void PrintStoreReport()
+        public List<Store> GetStores()
         {
             Console.WriteLine(@$"
 

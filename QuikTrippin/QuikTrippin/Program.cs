@@ -8,6 +8,7 @@ bool success = false;
 bool storeNumSuccess = false;
 var stringStoreNum = "0";
 int storeNum = 0;
+double parsedRetail = 0;
 
 StoreRepository stores = new StoreRepository();
 DistrictRepository districts = new DistrictRepository();
@@ -42,10 +43,49 @@ while (intMenuSelect != 5)
         stringStoreNum = Console.ReadLine();
         storeNumSuccess = (int.TryParse(stringStoreNum, out storeNum));
 
-        Store store = new Store(storeNum);
+        Stores store = new Stores(storeNum);
 
         stores.SaveNewStore(store);
         districts.SaveNewDistrict(district);
+
+        Console.Clear();
+
+        success = false;
+    } else if (success && intMenuSelect == 3)
+    {
+        var StoreQ = "Enter store's number";
+        var EmployeeName1 = "Enter Employee's First Name";
+
+        Console.Clear();
+
+        District.ShowStores();
+
+        Console.WriteLine(StoreQ);
+        var StoreNumber = Console.ReadLine();
+        storeNumSuccess = int.TryParse(StoreNumber, out storeNum);
+
+        var MatchingStoreNum = District.Stores.Find(store => store.StoreNumber == storeNum);
+
+        MatchingStoreNum = District.Stores.Find(store => store.StoreNumber == storeNum);
+        Console.Clear();
+
+        Console.WriteLine(EmployeeName1);
+        var firstname = Console.ReadLine();
+
+        var EmployeeName2 = $"Enter {firstname}'s Last Name";
+
+        Console.WriteLine(EmployeeName2);
+        var lastname = Console.ReadLine();
+
+        Console.WriteLine($"Enter {firstname}'s retail sales");
+        var retailsales = Console.ReadLine();
+        success = double.TryParse(retailsales, out parsedRetail);
+
+        Employee employees = new Employee(firstname, lastname, parsedRetail);
+
+        employees.ShowRoleMenu();
+
+        MatchingStoreNum.AddEmployee(employees);
 
         Console.Clear();
 
