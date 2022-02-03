@@ -8,11 +8,12 @@ namespace QuikTrippin.Models
 {
     internal class Employee
     {
-        public Employee(string firstname, string lastname, double retailsales)
+        public Employee(string firstname, string lastname, double retailsales, int storeNumber)
         {
             FirstName = firstname;
             LastName = lastname;
             RetailSales = retailsales;
+            StoreNumber = storeNumber;
         }
 
         public string RoleMenu
@@ -48,6 +49,7 @@ namespace QuikTrippin.Models
         public string FirstName;
         public string LastName;
         public double RetailSales;
+        public int StoreNumber;
 
         public void EmployeeDetails()
         {
