@@ -20,15 +20,26 @@ namespace QuikTrippin.Models
             AssistantManagerRetailSales = assistantManagerRetailSales;
         }
 
-        public Store(int storeNumber)
+        public Store(int storeNumber, string districtName)
         {
             StoreNumber = storeNumber;
+            DistrictName = districtName;
         }
 
         public int StoreNumber { get; set; }
+        public string StoreManager { get; set; }
+        public string AssistantManager { get; set; }
+        public double StoreManagerRetailSales { get; set; }
+        public double AssistantManagerRetailSales { get; set; }
 
-        //public List<Associate> Associates { get; set; }
+        public string DistrictName { get; set; }
         public static List<Employee> Employees { get; set; } = new List<Employee>();
+        public static List<GasRecord> GasRecords { get; set; } = new List<GasRecord>();
+
+        public void AddGasRecord(GasRecord gasrecord)
+        {
+            GasRecords.Add(gasrecord);
+        }
         public void AddEmployee(Employee employee)
         {
             Employees.Add(employee);
@@ -38,11 +49,6 @@ namespace QuikTrippin.Models
         {
             Employees.ForEach(em => em.EmployeeDetails());
         }
-
-        public string StoreManager { get; set; }
-        public string AssistantManager { get; set; }
-        public double StoreManagerRetailSales { get; set; }
-        public double AssistantManagerRetailSales { get; set;}
 
         public static void EmployeeReport(int store)
         {
@@ -55,6 +61,20 @@ namespace QuikTrippin.Models
                     Console.WriteLine($@"{employeeNum}.  {employee.Role}
     {employee.FirstName} {employee.LastName}:
         Retail Sales: ${employee.RetailSales}
+");
+                }
+            }
+        }
+
+        public static void GasReport(int store)
+        {
+            foreach (GasRecord record in GasRecords)
+            {
+                if(record.StoreNum == store)
+                {
+                    Console.WriteLine($@"
+Gas Yearly: ${record.GasYearly}
+Gas Current Quarter: ${record.GasQ1}
 ");
                 }
             }
