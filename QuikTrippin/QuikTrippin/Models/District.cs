@@ -11,10 +11,6 @@ namespace QuikTrippin.Models
         //composed of a collection of a Store
         //has one district manager
         //has a district name
-        public District()
-        {
-
-        }
         public District(string districtManager, string name)
         {
             DistrictManager = districtManager;
@@ -42,7 +38,7 @@ namespace QuikTrippin.Models
             {
                 storeList++;
                 Console.WriteLine($"{storeList}.Store Number: {store.StoreNumber}");
-                store.ShowEmployees();
+                //store.ShowEmployees();
             }
         }
 

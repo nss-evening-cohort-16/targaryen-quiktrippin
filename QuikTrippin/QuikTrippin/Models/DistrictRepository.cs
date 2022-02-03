@@ -15,11 +15,9 @@ namespace QuikTrippin.Models
             _districts.Add(district);
         }
 
-        public List<District> GetDistricts()
+        public static List<District> GetDistricts()
         {
-            Console.WriteLine($@"
-District Sales Report
-");
+            return _districts;
         }
     }
 }

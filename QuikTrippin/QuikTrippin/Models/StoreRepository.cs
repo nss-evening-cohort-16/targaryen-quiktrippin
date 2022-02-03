@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,24 +11,14 @@ namespace QuikTrippin.Models
     {
         static List<Store> _stores = new List<Store>();
 
-        public void GetStores()
-        {
-            foreach (Store store in _stores)
-            {
-                Console.WriteLine(store.StoreNumber);
-            }
-        }
-
         public void SaveNewStore(Store store)
         {
             _stores.Add(store);
         }
 
-//        public List<Store> GetStores()
-//        {
-//            Console.WriteLine(@$"
-
-//");
-//        }
+        public List<Store> GetStores()
+        {
+            return _stores;
+        }
     }
 }
