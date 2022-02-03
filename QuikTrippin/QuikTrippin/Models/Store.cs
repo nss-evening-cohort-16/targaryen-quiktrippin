@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace QuikTrippin.Models
 {
-    internal class Stores
+    internal class Store
     {
         //store consists of a group of associates, store manager, and assistant manager
-        public Stores(int storeNumber, string storeManager, string assistantManager,
+        public Store(int storeNumber, string storeManager, string assistantManager,
             double storeManagerRetailSales, double assistantManagerRetailSales
             )
         {
@@ -20,7 +20,7 @@ namespace QuikTrippin.Models
             AssistantManagerRetailSales = assistantManagerRetailSales;
         }
 
-        public Stores(int storeNumber)
+        public Store(int storeNumber)
         {
             StoreNumber = storeNumber;
         }

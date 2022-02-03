@@ -13,7 +13,7 @@ double parsedRetail = 0;
 StoreRepository stores = new StoreRepository();
 DistrictRepository districts = new DistrictRepository();
 
-while (intMenuSelect != 5)
+while (intMenuSelect != 6)
 {
     Menu();
     stringMenuSelect = Console.ReadLine();
@@ -21,8 +21,9 @@ while (intMenuSelect != 5)
 
     if (success && intMenuSelect == 2)
     {
-        districts.PrintDistrictReport();
-        districts.GetDistricts();
+        //districts.PrintDistrictReport();
+        //districts.GetDistricts();
+        stores.GetStores();
         Console.ReadKey();
         Console.Clear();
         success = false;
@@ -43,10 +44,10 @@ while (intMenuSelect != 5)
         stringStoreNum = Console.ReadLine();
         storeNumSuccess = (int.TryParse(stringStoreNum, out storeNum));
 
-        Stores store = new Stores(storeNum);
+        Store store = new Store(storeNum);
 
         stores.SaveNewStore(store);
-        districts.SaveNewDistrict(district);
+        //districts.SaveNewDistrict(district);
 
         Console.Clear();
 
