@@ -45,5 +45,18 @@ namespace QuikTrippin.Models
             }
         }
 
+        public static void StoreReport()
+        {
+            int storeList = 0;
+            foreach (Store store in Stores)
+            {
+                storeList++;
+                Console.WriteLine($@"
+Store #{store.StoreNumber}
+------------------------------");
+                Store.EmployeeReport(store.StoreNumber);
+            }
+        }
+
     }
 }

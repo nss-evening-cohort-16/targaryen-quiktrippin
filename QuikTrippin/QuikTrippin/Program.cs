@@ -10,9 +10,6 @@ var stringStoreNum = "0";
 int storeNum = 0;
 double parsedRetail = 0;
 
-StoreRepository stores = new StoreRepository();
-DistrictRepository districts = new DistrictRepository();
-
 while (intMenuSelect != 6)
 {
     Menu();
@@ -21,9 +18,10 @@ while (intMenuSelect != 6)
 
     if (success && intMenuSelect == 2)
     {
-        //districts.PrintDistrictReport();
-        //districts.GetDistricts();
-        stores.GetStores();
+        Console.Clear();
+        Console.WriteLine("District Sales Report");
+        District.StoreReport();
+
         Console.ReadKey();
         Console.Clear();
         success = false;
@@ -46,8 +44,7 @@ while (intMenuSelect != 6)
 
         Store store = new Store(storeNum);
 
-        stores.SaveNewStore(store);
-        //districts.SaveNewDistrict(district);
+        district.AddStore(storeNum);
 
         Console.Clear();
 
@@ -82,7 +79,7 @@ while (intMenuSelect != 6)
         var retailsales = Console.ReadLine();
         success = double.TryParse(retailsales, out parsedRetail);
 
-        Employee employees = new Employee(firstname, lastname, parsedRetail);
+        Employee employees = new Employee(firstname, lastname, parsedRetail, storeNum);
 
         employees.ShowRoleMenu();
 
