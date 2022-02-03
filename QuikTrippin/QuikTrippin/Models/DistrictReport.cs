@@ -19,6 +19,11 @@ namespace QuikTrippin.Models
         // Properties
 
         // Methods
-        public void
+        public void ShowDistrictReport()
+        {
+            Console.Clear();
+
+            Console.WriteLine("District Sales Report");
+        }
     }
 }

@@ -10,14 +10,24 @@ namespace QuikTrippin.Models
     {
         static List<District> _districts = new List<District>();
 
+        public void GetDistricts()
+        {
+            foreach (District district in _districts)
+            {
+                Console.WriteLine(district.DistrictManager);
+            }
+        }
+
         public void SaveNewDistrict(District district)
         {
             _districts.Add(district);
         }
 
-        public List<District> GetDistricts()
+        public void PrintDistrictReport()
         {
-            return _districts;
+            Console.WriteLine($@"
+District Sales Report
+");
         }
     }
 }

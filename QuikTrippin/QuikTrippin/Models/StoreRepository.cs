@@ -10,14 +10,24 @@ namespace QuikTrippin.Models
     {
         static List<Store> _stores = new List<Store>();
 
+        public void GetStores()
+        {
+            foreach (Store store in _stores)
+            {
+                Console.WriteLine(store.StoreNumber);
+            }
+        }
+
         public void SaveNewStore(Store store)
         {
             _stores.Add(store);
         }
 
-        public List<Store> GetStores()
+        public void PrintStoreReport()
         {
-            return _stores;
+            Console.WriteLine(@$"
+
+");
         }
     }
 }

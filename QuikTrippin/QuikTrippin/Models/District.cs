@@ -11,6 +11,10 @@ namespace QuikTrippin.Models
         //composed of a collection of a Store
         //has one district manager
         //has a district name
+        public District()
+        {
+
+        }
         public District(string districtManager, string name)
         {
             DistrictManager = districtManager;
@@ -31,13 +35,12 @@ namespace QuikTrippin.Models
             Stores.Add(store);
         }
 
-        public void ShowStores()
-        {
-            foreach (Store store in Stores)
-            {
-                Console.WriteLine($"{store.StoreNumber}");
-            }
-        }
-
+        //public void ShowStores()
+        //{
+        //    foreach (Store store in Stores)
+        //    {
+        //        Console.WriteLine($"{store.StoreNumber}");
+        //    }
+        //}
     }
 }

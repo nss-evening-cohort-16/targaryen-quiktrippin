@@ -9,12 +9,24 @@ bool storeNumSuccess = false;
 var stringStoreNum = "0";
 int storeNum = 0;
 
+StoreRepository stores = new StoreRepository();
+DistrictRepository districts = new DistrictRepository();
+
 while (intMenuSelect != 5)
 {
     Menu();
     stringMenuSelect = Console.ReadLine();
     success = (int.TryParse(stringMenuSelect, out intMenuSelect));
-    if (success && intMenuSelect == 4)
+
+    if (success && intMenuSelect == 2)
+    {
+        districts.PrintDistrictReport();
+        districts.GetDistricts();
+        Console.ReadKey();
+        Console.Clear();
+        success = false;
+    }
+    else if (success && intMenuSelect == 4)
     {
         Console.Clear();
 
@@ -32,10 +44,8 @@ while (intMenuSelect != 5)
 
         Store store = new Store(storeNum);
 
-        district.AddStore(storeNum);
-
-        //testing to see if stores are in the district
-        //district.ShowStores();
+        stores.SaveNewStore(store);
+        districts.SaveNewDistrict(district);
 
         Console.Clear();
 
