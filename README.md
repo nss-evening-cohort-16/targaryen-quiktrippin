@@ -21,7 +21,7 @@
 ## Code Snippet:
 
 ```c#
-public static void DistrictReport(string name)
+        public static void DistrictReport(string name)
         {
             int storeList = 0;
             foreach (Store store in Stores)
@@ -34,6 +34,7 @@ public static void DistrictReport(string name)
 ------------------------------");
                     Store.EmployeeReport(store.StoreNumber);
                     Store.GasReport(store.StoreNumber);
+                    Store.RetailReport();
                 }
             }
         }
