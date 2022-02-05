@@ -65,8 +65,9 @@ namespace QuikTrippin.Models
                     Console.WriteLine($@"
 {name} Store #{store.StoreNumber}
 ------------------------------");
-                Store.EmployeeReport(store.StoreNumber);
-                Store.GasReport(store.StoreNumber);
+                    Store.EmployeeReport(store.StoreNumber);
+                    Store.GasReport(store.StoreNumber);
+                }
             }
         }
 
