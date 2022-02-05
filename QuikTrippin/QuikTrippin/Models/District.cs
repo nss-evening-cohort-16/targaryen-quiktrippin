@@ -67,7 +67,7 @@ namespace QuikTrippin.Models
 ------------------------------");
                     Store.EmployeeReport(store.StoreNumber);
                     Store.GasReport(store.StoreNumber);
-                    Store.RetailReport();
+                    Store.RetailReport(store.StoreNumber);
                 }
             }
         }

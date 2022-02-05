@@ -79,12 +79,15 @@ Gas Current Quarter: ${record.GasQ1}");
             }
         }
 
-        public static void RetailReport()
+        public static void RetailReport(int store)
         {
             double retailCurrentQuarter = 0;
             foreach (Employee employee in Employees)
             {
-                retailCurrentQuarter += employee.RetailSales;
+                if (employee.StoreNumber == store)
+                {
+                    retailCurrentQuarter += employee.RetailSales;
+                }
             }
             double retailYearly = retailCurrentQuarter * 4;
 
