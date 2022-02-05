@@ -74,10 +74,23 @@ namespace QuikTrippin.Models
                 {
                     Console.WriteLine($@"
 Gas Yearly: ${record.GasYearly}
-Gas Current Quarter: ${record.GasQ1}
-");
+Gas Current Quarter: ${record.GasQ1}");
                 }
             }
+        }
+
+        public static void RetailReport()
+        {
+            double retailCurrentQuarter = 0;
+            foreach (Employee employee in Employees)
+            {
+                retailCurrentQuarter += employee.RetailSales;
+            }
+            double retailYearly = retailCurrentQuarter * 4;
+
+            Console.WriteLine($@"Retail Yearly: ${retailYearly}
+Retail Current Quarter: ${retailCurrentQuarter}
+");
         }
 
     }
