@@ -19,8 +19,15 @@ while (intMenuSelect != 6)
     if (success && intMenuSelect == 2)
     {
         Console.Clear();
+
+        var checkDistricts = DistrictRepository.GetDistricts();
+        checkDistricts.ForEach(dist => Console.WriteLine(dist.Name));
+
+        Console.WriteLine("Enter District Name:");
+        var name = Console.ReadLine();
+
         Console.WriteLine("District Sales Report");
-        District.StoreReport();
+        District.DistrictReport(name);
 
         Console.ReadKey();
         Console.Clear();
@@ -44,9 +51,9 @@ while (intMenuSelect != 6)
         stringStoreNum = Console.ReadLine();
         storeNumSuccess = (int.TryParse(stringStoreNum, out storeNum));
 
-        Store store = new Store(storeNum);
+        Store store = new Store(storeNum, name);
 
-        matchingDistrictName.AddStore(storeNum);
+        matchingDistrictName.AddStore(storeNum, name);
 
         Console.Clear();
 

@@ -19,5 +19,16 @@ namespace QuikTrippin.Models
         {
             return _districts;
         }
+
+        //public static void DistrictReport(string districtName)
+        //{
+        //    foreach(District district in _districts)
+        //    {
+        //        if (district.Name == districtName)
+        //        {
+        //            District.StoreReport(district);
+        //        }
+        //    }
+        //}
     }
 }

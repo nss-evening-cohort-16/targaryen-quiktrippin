@@ -20,14 +20,14 @@ namespace QuikTrippin.Models
         public string DistrictManager { get; set; }
         public static List<Store> Stores { get; set; }
 
-        public void AddStore(int storeNum)
+        public void AddStore(int storeNum, string districtName)
         {
             if (Stores == null)
             {
                 Stores = new List<Store>();
             }
 
-            var store = new Store(storeNum);
+            var store = new Store(storeNum, districtName);
             Stores.Add(store);
         }
 
@@ -42,16 +42,19 @@ namespace QuikTrippin.Models
             }
         }
 
-        public static void StoreReport()
+        public static void DistrictReport(string name)
         {
             int storeList = 0;
             foreach (Store store in Stores)
             {
-                storeList++;
-                Console.WriteLine($@"
-Store #{store.StoreNumber}
+                if (store.DistrictName == name)
+                {
+                    storeList++;
+                    Console.WriteLine($@"
+{name} Store #{store.StoreNumber}
 ------------------------------");
-                Store.EmployeeReport(store.StoreNumber);
+                    Store.EmployeeReport(store.StoreNumber);
+                }
             }
         }
 

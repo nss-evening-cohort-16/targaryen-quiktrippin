@@ -11,7 +11,7 @@ namespace QuikTrippin.Models
         //store consists of a group of associates, store manager, and assistant manager
         public Store(int storeNumber, string storeManager, string assistantManager,
             double storeManagerRetailSales, double assistantManagerRetailSales
-            )
+        )
         {
             StoreNumber = storeNumber;
             StoreManager = storeManager;
@@ -20,12 +20,14 @@ namespace QuikTrippin.Models
             AssistantManagerRetailSales = assistantManagerRetailSales;
         }
 
-        public Store(int storeNumber)
+        public Store(int storeNumber, string districtName)
         {
             StoreNumber = storeNumber;
+            DistrictName = districtName;
         }
 
         public int StoreNumber { get; set; }
+        public string DistrictName { get; set; }
 
         //public List<Associate> Associates { get; set; }
         public static List<Employee> Employees { get; set; } = new List<Employee>();
