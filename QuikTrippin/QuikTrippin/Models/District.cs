@@ -54,17 +54,20 @@ namespace QuikTrippin.Models
             }
         }
 
-        public static void StoreReport()
+        public static void DistrictReport(string name)
         {
             int storeList = 0;
             foreach (Store store in Stores)
             {
-                storeList++;
-                Console.WriteLine($@"
-Store #{store.StoreNumber}
+                if (store.DistrictName == name)
+                {
+                    storeList++;
+                    Console.WriteLine($@"
+{name} Store #{store.StoreNumber}
 ------------------------------");
-                Store.EmployeeReport(store.StoreNumber);
-                Store.GasReport(store.StoreNumber);
+                    Store.EmployeeReport(store.StoreNumber);
+                    Store.GasReport(store.StoreNumber);
+                }
             }
         }
 
