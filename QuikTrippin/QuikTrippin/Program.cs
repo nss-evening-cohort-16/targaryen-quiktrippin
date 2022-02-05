@@ -95,6 +95,8 @@ while (intMenuSelect != 6)
         Console.WriteLine("Enter District Name:");
         var name = Console.ReadLine();
 
+        Console.Clear();
+
         Console.WriteLine("District Sales Report");
         District.DistrictReport(name);
 
