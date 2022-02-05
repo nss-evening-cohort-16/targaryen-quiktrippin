@@ -18,8 +18,6 @@
 
 ## [Loom video walkthrough]()
 
-## Relevant Links:
-
 ## Code Snippet:
 
 ```c#
@@ -42,5 +40,8 @@ public static void DistrictReport(string name)
 ```
 
 ## Screenshots:
+
+<img width="454" alt="2022-02-05 (1)" src="https://user-images.githubusercontent.com/86667443/152648682-96de09ca-513f-41e2-b05b-212e000df5ba.png">
+<img width="478" alt="2022-02-05 (2)" src="https://user-images.githubusercontent.com/86667443/152648683-e6269554-b428-4979-98a7-4aadf0e393c6.png">
 
 ### Contributors: [Mary Beth Hunter](https://github.com/marybethhunter), [Albert Chittaphong](https://github.com/albertchitta), [Gabriel Smith](https://github.com/Gabrielsmith1998), [Dario Perez](https://github.com/darioperez1415)
