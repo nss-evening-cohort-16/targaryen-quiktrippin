@@ -6,15 +6,84 @@ var stringMenuSelect = "0";
 int intMenuSelect = 0;
 bool success = false;
 bool storeNumSuccess = false;
+bool gasSalesSuccess = false;
 var stringStoreNum = "0";
 int storeNum = 0;
 double parsedRetail = 0;
+double gasQ1 = 0;
+double gasQ2 = 0;
+double gasQ3 = 0;
+double gasQ4 = 0;
 
 while (intMenuSelect != 6)
 {
     Menu();
     stringMenuSelect = Console.ReadLine();
     success = (int.TryParse(stringMenuSelect, out intMenuSelect));
+
+    if (success && intMenuSelect == 1)
+    {
+        Console.Clear();
+
+        var checkDistricts = DistrictRepository.GetDistricts();
+        checkDistricts.ForEach(dist => Console.WriteLine(dist.Name));
+
+        Console.WriteLine("Enter District Name:");
+        var name = Console.ReadLine();
+
+        Console.Clear();
+
+        var MatchingStoreNum = District.Stores.Find(store => store.StoreNumber == storeNum);
+
+        MatchingStoreNum = District.Stores.Find(store => store.StoreNumber == storeNum);
+
+        District.ShowStores(name);
+
+        Console.WriteLine("Enter store number:");
+
+        var StoreNumber = Console.ReadLine();
+        storeNumSuccess = int.TryParse(StoreNumber, out storeNum);
+
+        Console.Clear();
+
+        Console.WriteLine($"Enter Q1 gas sales for store #{storeNum}");
+
+        var gasSales = Console.ReadLine();
+        gasSalesSuccess = double.TryParse(gasSales, out gasQ1);
+
+        Console.Clear();
+
+        Console.WriteLine($"Enter Q2 gas sales for store #{storeNum}");
+
+        gasSales = Console.ReadLine();
+        gasSalesSuccess = double.TryParse(gasSales, out gasQ2);
+
+        Console.Clear();
+
+        Console.WriteLine($"Enter Q3 gas sales for store #{storeNum}");
+
+        gasSales = Console.ReadLine();
+        gasSalesSuccess = double.TryParse(gasSales, out gasQ3);
+
+        Console.Clear();
+
+        Console.WriteLine($"Enter Q4 gas sales for store #{storeNum}");
+
+        gasSales = Console.ReadLine();
+        gasSalesSuccess = double.TryParse(gasSales, out gasQ4);
+
+        Console.Clear();
+
+        GasRecord gasRecord = new GasRecord(gasQ1, gasQ2, gasQ3, gasQ4, storeNum);
+
+        MatchingStoreNum.AddGasRecord(gasRecord);
+
+        gasRecord.ShowGas();
+
+        Console.ReadKey();
+        Console.Clear();
+        success = false;
+    }
 
     if (success && intMenuSelect == 2)
     {
