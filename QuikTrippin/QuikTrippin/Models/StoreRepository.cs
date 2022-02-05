@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +9,14 @@ namespace QuikTrippin.Models
 {
     internal class StoreRepository
     {
-        static List<Stores> _stores = new List<Stores>();
+        static List<Store> _stores = new List<Store>();
 
-        public void SaveNewStore(Stores store)
+        public void SaveNewStore(Store store)
         {
             _stores.Add(store);
         }
 
-        public List<Stores> GetStores()
+        public List<Store> GetStores()
         {
             return _stores;
         }

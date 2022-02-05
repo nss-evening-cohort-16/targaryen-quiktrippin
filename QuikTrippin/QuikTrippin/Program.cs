@@ -15,7 +15,18 @@ while (intMenuSelect != 6)
     Menu();
     stringMenuSelect = Console.ReadLine();
     success = (int.TryParse(stringMenuSelect, out intMenuSelect));
-    if (success && intMenuSelect == 4)
+
+    if (success && intMenuSelect == 2)
+    {
+        Console.Clear();
+        Console.WriteLine("District Sales Report");
+        District.StoreReport();
+
+        Console.ReadKey();
+        Console.Clear();
+        success = false;
+    }
+    else if (success && intMenuSelect == 4)
     {
         Console.Clear();
 
@@ -33,12 +44,9 @@ while (intMenuSelect != 6)
         stringStoreNum = Console.ReadLine();
         storeNumSuccess = (int.TryParse(stringStoreNum, out storeNum));
 
-        Stores store = new Stores(storeNum);
+        Store store = new Store(storeNum);
 
         matchingDistrictName.AddStore(storeNum);
-
-        //testing to see if stores are in the district
-        //district.ShowStores();
 
         Console.Clear();
 
@@ -73,7 +81,7 @@ while (intMenuSelect != 6)
         var retailsales = Console.ReadLine();
         success = double.TryParse(retailsales, out parsedRetail);
 
-        Employee employees = new Employee(firstname, lastname, parsedRetail);
+        Employee employees = new Employee(firstname, lastname, parsedRetail, storeNum);
 
         employees.ShowRoleMenu();
 
