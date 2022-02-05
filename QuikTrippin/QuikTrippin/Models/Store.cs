@@ -11,7 +11,7 @@ namespace QuikTrippin.Models
         //store consists of a group of associates, store manager, and assistant manager
         public Store(int storeNumber, string storeManager, string assistantManager,
             double storeManagerRetailSales, double assistantManagerRetailSales
-            )
+        )
         {
             StoreNumber = storeNumber;
             StoreManager = storeManager;
