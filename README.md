@@ -8,7 +8,7 @@
 ```
 
 ## About the Users
-* QuikTrip is one of the best gas stations on the planet and as a dev we've been asked to help the Account Manager and their department. It's becoming a hard task to keep track of the sales from the various regions and they need their district managers to enter their store sales and all employees information and individual sales. 
+* QuikTrip is one of the best gas stations on the planet and as developers, we've been asked to help the Account Manager and their department. It's becoming a hard task to keep track of the sales from the various regions and they need their district managers to enter their store sales and all employees information and individual sales. 
 
 
 ## Features: 
