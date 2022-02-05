@@ -16,7 +16,7 @@
 * Users can add multiple districts and create and assign new stores and employees to specific districts. 
 * Users can view quarterly and yearly gas and retail sales.
 
-## [Loom video walkthrough]()
+## [Loom video walkthrough](https://www.loom.com/share/991cf6810a794cccb9a0faf6feca363d)
 
 ## Code Snippet:
 
